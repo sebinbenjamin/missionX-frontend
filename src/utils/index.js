@@ -11,16 +11,41 @@ export const fetchData = (apiEndpoint) => {
   );
 };
 
-export const uploadImage = (formData) => {
-  fetch(`${API_URL}api/user/uploadPic`, {
+export const callUploadAPI = (postBody) => {
+  const endPoint = `api/user/profilePic`;
+  const fetchURL = API_URL + endPoint;
+  console.log(fetchURL);
+  const requestOptions = {
     method: 'POST',
-    body: formData,
-  })
-    .then((response) => response.json())
+    body: postBody,
+  };
+
+  fetch(fetchURL, requestOptions)
+    .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log('Request succeeded with JSON response', data);
+      alert(JSON.stringify(data));
     })
     .catch((error) => {
-      console.error(error);
+      console.log('Request failed', error);
+    });
+};
+
+export const fetchProfilePic = (userId) => {
+  const endPoint = `api/user/profilePic`;
+  const fetchURL = API_URL + endPoint;
+
+  const requestOptions = {
+    method: 'GET',
+  };
+
+  return fetch(`${fetchURL}/${userId}`, requestOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log('Request succeeded with JSON response', data);
+      return data.dataURI;
+    })
+    .catch((error) => {
+      console.log('Request failed', error);
     });
 };

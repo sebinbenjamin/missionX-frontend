@@ -1,6 +1,8 @@
 import FileUpload from 'components/FileUpload';
+import ShowcaseProfilePic from 'components/ShowcaseProfilePic';
 
 import { MAX_AGE } from 'constants/index';
+import { API_URL } from 'config';
 import logo from 'assets/images/logo.svg';
 import './App.css';
 
@@ -9,7 +11,8 @@ function App() {
     <div>
       <img src={logo} alt="React Logo" />
       <p>
-        Edit <code>src/App.js</code> and save to reload.
+        Edit <code>src/App.js</code> and save
+        <h1>{API_URL}</h1> to reload.
       </p>
       <a
         className="App-link"
@@ -21,6 +24,7 @@ function App() {
       </a>
       Max Age is {MAX_AGE}.<FileUpload></FileUpload>
       <hr></hr>
+      <ShowcaseProfilePic></ShowcaseProfilePic>
     </div>
   );
 }

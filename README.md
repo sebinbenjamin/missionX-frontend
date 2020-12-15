@@ -47,9 +47,9 @@ Follow the instructions at https://create-react-app.dev/docs/importing-a-compone
         "engines": {
           "node": "12.x"
         }
-        
-7. Commit the changes and run `git push heroku` to deploy changes to Heroku whenever required.
-8. Run `heroku logs --tail` to debug any issues.
+7. Add environment variable to Heroku https://devcenter.heroku.com/articles/config-vars  
+8. Commit the changes and run `git push heroku master` to deploy changes to Heroku whenever required.
+9. Run `heroku logs --tail` to debug any issues.
 
 ### References
 Heroku Deployment - https://devcenter.heroku.com/categories/deployment
