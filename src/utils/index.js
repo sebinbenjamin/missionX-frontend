@@ -13,8 +13,8 @@ export const fetchData = (apiEndpoint) => {
 
 export const callUploadAPI = (postBody) => {
   const endPoint = `api/user/profilePic`;
-  const fetchURL = API_URL + endPoint;
-  console.log(fetchURL);
+  const fetchURL = API_URL + endPoint; // localhost:4000/api/user/profilePic or https://missionx-backend.herokuapp.com/api/user/profilePic 
+
   const requestOptions = {
     method: 'POST',
     body: postBody,
@@ -33,12 +33,13 @@ export const callUploadAPI = (postBody) => {
 
 export const fetchProfilePic = (userId) => {
   const endPoint = `api/user/profilePic`;
-  const fetchURL = API_URL + endPoint;
+  const fetchURL = API_URL + endPoint; // localhost:4000/api/user/profilePic/
 
   const requestOptions = {
     method: 'GET',
   };
 
+  // localhost:4000/api/user/profilePic/2 || where the userId is 2
   return fetch(`${fetchURL}/${userId}`, requestOptions)
     .then((res) => res.json())
     .then((data) => {

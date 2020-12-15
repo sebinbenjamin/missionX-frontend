@@ -3,9 +3,13 @@ import { fetchProfilePic } from 'utils';
 
 const ShowcaseProfilePic = () => {
   const [imageURI, setImageURI] = useState();
+
   const getClickHandler = async () => {
     console.log('Clicked Get', userID);
+    // Wait to fetch the image from the API  
     const image = await fetchProfilePic(userID);
+    
+    // Update the state with image from the DB
     setImageURI(image);
   };
 
@@ -14,7 +18,7 @@ const ShowcaseProfilePic = () => {
   return (
     <div>
       <input
-        type="text"
+        type="number"
         value={userID}
         onInput={(e) => setUserID(e.target.value)}
       />
