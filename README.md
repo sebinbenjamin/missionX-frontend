@@ -1,25 +1,31 @@
 # Sample React project structure
 
-There is no particular official project structure for React. I've followed some of the commonly used structure for code organization in react projects in this sample code. 
+There is no particular official project structure for React. I've followed some of the commonly used practices for code organization in react projects in this sample code. 
 
-Again, there is no ideal structure for all projects, but you could start with this and reorganize to suit your project.
+Again, there is no ideal structure for all projects, but you could start with this and reorganize as to suit your project.
 
 ## Structure used
 We have the following structure currently.
 
 ```
 |--src
-|  |-components
+|  |-shared-components
+|  |  |-NavBar        
+|  |  |-Footer        
 |  |-config 
 |  |-constants
 |  |-pages
+|  |  |- Home
+|  |  |- Dashboard
+|  |  |- StudentProjects
 |  |-assets
-|  |  |-images
-|  |  |-fonts
+|  |  |-shared
+|  |  |  |-images
+|  |  |  |-fonts
 |  |-utils
 ```
 
-## Absolute Imports
+## Absolute Imports (Optional)
 
 By configuring a `jsconfig.json` file with a base URL, we could simplify the import paths used, ie be able to use
 
@@ -31,7 +37,7 @@ instead of
 
 Follow the instructions at https://create-react-app.dev/docs/importing-a-component/#absolute-imports to set it up.
 
-## Heroku Deployment steps
+## Heroku Deployment steps (Optional)
 
 1. Create an account with https://www.heroku.com/
 2. Download and install the Heroku CLI https://devcenter.heroku.com/articles/heroku-cli#download-and-install
